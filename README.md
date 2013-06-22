@@ -6,8 +6,8 @@ This script will create a mosaic of an image using your Steam emoticons.
 
 
 # Examples
-![P](http://i.imgur.com/8FrwZmn.png)
-![Pikachu](http://i.imgur.com/8FrwZmn.png) ![Squirtle](http://i.imgur.com/cdsApq4.png)
+![P](http://i.imgur.com/5lkVAib.png)
+![Pikachu](http://i.imgur.com/5mOVj8l.png) ![Squirtle](http://i.imgur.com/ctPNpDE.png)
 
 
 # Installation
@@ -16,7 +16,7 @@ Then simply download and use the script (mosaticon.py)
 
 
 # Usage
-`mosaticon.py <steamid> <imagefile> [<width> [<height>]]
+`mosaticon.py <steamid> <imagefile> [<width> [<height>]]`
 
 where:
 - **steamid** is your profile name (steamcommunity.com/id/XXXXXXX)
@@ -34,7 +34,7 @@ of the script will look better the more emoticons you own.
 
 # Output
 The script will output the text you'll need to paste. It outputs to stdout by default though,
-so you'll it to redirect it to a file (`mosaticon.py bla bla bla > output.txt`)
+so you'll it to redirect it to a file: `mosaticon.py bla bla bla > output.txt`
 
 If the output is too long to fit into a message, it'll be split up into piece.
 You'll need to paste each piece in succession. Also, since the Steam client has an artificial limit of 2048 characters, 
