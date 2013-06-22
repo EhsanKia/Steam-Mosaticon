@@ -7,7 +7,7 @@ This script will create a mosaic of an image using your Steam emoticons.
 
 # Examples
 ![P](http://i.imgur.com/5lkVAib.png)
-![Pikachu](http://i.imgur.com/5mOVj8l.png) ![Squirtle](http://i.imgur.com/ctPNpDE.png)
+![Pikachu](http://i.imgur.com/7dVt8FP.png) ![Squirtle](http://i.imgur.com/2ckEbfr.png)
 
 
 # Installation
@@ -49,11 +49,11 @@ For example, [my name](http://i.imgur.com/H25Fn30.png) is roughly 3.4 emoticons 
 You can change this according to the length of your name by changing `name_length`.
 First value is the number of emoticons to remove, second is the number of dots to add.
 
-The script uses the background color for transparent pixels in the emoticons to get a more accurate result.
-On the default skin this is (40, 40, 40). If you have a custom skin and you like to change this, modify `bg_color`.
+The script uses the `bg_color` for transparent pixels in the emoticons to get a more accurate result.
+On the default skin this is (40, 40, 40). If you have a custom skin and you can change it.
 
-Each emoticons name has a different lenght, so you may need to play with the width and height to get it to fit
-in 1 or 2 parts. Roughly, each piece holds around 1000 emotes, so 32x32 would fit in one piece and 45x45 for two.
+Emoticon's name have different lenghts, so you may need to play with the width/height to get it to fit
+in 1 or 2 parts. Roughly, each part holds ~1000 emotes, so 32x32 would fit in one piece and 45x45 for two.
 
 If you have any issues, you can message me on Steam:
 http://steamcommunity.com/id/Ph0X
