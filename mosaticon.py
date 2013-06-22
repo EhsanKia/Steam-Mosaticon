@@ -42,7 +42,7 @@ def get_closest(elist, target_color):
 
 # Prints instruction if not enough arguments are given
 if len(sys.argv) < 3:
-    print "Usage: mozaticon.py steamid imagefile [target_width [target_height]]"
+    print "Usage: mosaticon.py steamid imagefile [target_width [target_height]]"
     sys.exit(0)
 
 # Loads the inventory json
@@ -103,7 +103,7 @@ for y in range(target_size[1]):
     count += len(print_str) + 1
 
     if count > 12200:  # Character limit per message
-        print "\n\n\n"
+        print "\n\n-----\n"
         count = 0
         # This removes icons to compensate for the length of your name
         print_str = '.'*name_length[1] + ':' + '::'.join(print_str.split('::')[name_length[0]:])
