@@ -78,12 +78,12 @@ except:
     sys.exit(0)
 
 # Figures out target dimentions
+cw, ch = target_img.size 
 if len(sys.argv) > 4:
     target_size = map(int, (sys.argv[3], sys.argv[4]))
 elif len(sys.argv) == 4:
-    target_size = map(int, (sys.argv[3], sys.argv[3]))
+    target_size = map(int, (sys.argv[3], float(sys.argv[3])*ch/cw))
 else:
-    cw, ch = target_img.size 
     target_size = (25, int(25.0*ch/cw))
 
 # Resize image and grab pixels
@@ -91,7 +91,7 @@ resized_img = target_img.resize(target_size)
 target_px = resized_img.load()
 
 # For each pixel, find closest emoticon and add it to the output
-name_length = (4, 2) # The lenght of your steam name + time (emoticon, dot)
+name_length = (3, 2) # The lenght of your steam name + time (emoticon, dot)
 print_str = ".\n"
 count = 2
 for y in range(target_size[1]):
