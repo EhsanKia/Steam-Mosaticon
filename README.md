@@ -38,7 +38,7 @@ so you'll it to redirect it to a file: `mosaticon.py bla bla bla > output.txt`
 
 If the output is too long to fit into a message, it'll be split up into piece.
 You'll need to paste each piece in succession. Also, since the Steam client has an artificial limit of 2048 characters, 
-**you'll need to use the [web chat interface](steamcommunity.com/chat/)** which can paste up to 12288 characters.
+**you'll need to use the [web chat interface](http://steamcommunity.com/chat/)** which can paste up to 12288 characters.
 There might be a way of uncapping the client through skin editing, but I couldn't get it working.
 
 
