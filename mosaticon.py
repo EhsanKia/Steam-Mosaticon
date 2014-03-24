@@ -42,7 +42,7 @@ def get_closest(elist, target_color):
 
 # Prints instruction if not enough arguments are given
 if len(sys.argv) < 3:
-    print "Usage: mosaticon.py steamid imagefile [target_width [target_height]]"
+    print("Usage: mozaticon.py steamid imagefile [target_width [target_height]]")
     sys.exit(0)
 
 # Loads the inventory json
@@ -50,10 +50,10 @@ inv_url = "http://steamcommunity.com/id/{}/inventory/json/753/6/".format(sys.arg
 try:
     inv_json = requests.get(inv_url).json()
 except:
-    print "Invalid steamid"
+    print("Invalid steamid")
     sys.exit(0)
 if not inv_json['success']:
-    print "Parsing inventory failed"
+    print("Parsing inventory failed")
     sys.exit(0)
 
 # Grabs the name of all the emoticons
@@ -68,22 +68,25 @@ emote_data = []
 for name in emote_names:  # Download each emoticon and get average color in a dict
     response = requests.get(emote_url + name)
     img = Image.open(StringIO(response.content))
-    emote_data.append((name, get_average(img)))
+    try:
+        emote_data.append((name, get_average(img)))
+    except:
+        pass
 
 try:  # Tries to open the target image
     target_name = sys.argv[2]
     target_img = Image.open(target_name)
 except:
-    print "Invalid file"
+    print("Invalid file")
     sys.exit(0)
 
 # Figures out target dimentions
-cw, ch = target_img.size 
 if len(sys.argv) > 4:
     target_size = map(int, (sys.argv[3], sys.argv[4]))
 elif len(sys.argv) == 4:
-    target_size = map(int, (sys.argv[3], float(sys.argv[3])*ch/cw))
+    target_size = map(int, (sys.argv[3], sys.argv[3]))
 else:
+    cw, ch = target_img.size
     target_size = (25, int(25.0*ch/cw))
 
 # Resize image and grab pixels
@@ -91,7 +94,7 @@ resized_img = target_img.resize(target_size)
 target_px = resized_img.load()
 
 # For each pixel, find closest emoticon and add it to the output
-name_length = (3, 2) # The lenght of your steam name + time (emoticon, dot)
+name_length = (4, 2) # The lenght of your steam name + time (emoticon, dot)
 print_str = ".\n"
 count = 2
 for y in range(target_size[1]):
@@ -103,10 +106,10 @@ for y in range(target_size[1]):
     count += len(print_str) + 1
 
     if count > 12200:  # Character limit per message
-        print "\n\n-----\n"
+        print("\n\n\n")
         count = 0
         # This removes icons to compensate for the length of your name
         print_str = '.'*name_length[1] + ':' + '::'.join(print_str.split('::')[name_length[0]:])
 
-    print print_str
+    print(print_str)
     print_str = ""
