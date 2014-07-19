@@ -1,21 +1,24 @@
 Steam-Mosaticon
 ===============
 
-## Description
+**This script is now outdated. I have since made an interactive webapp version of this script that you can use from your browser. You can access it [HERE](http://steam.tools/mosaticon).**
+
+
+### Description
 This script will create a mosaic of an image using your Steam emoticons.
 
 
-## Examples
+### Examples
 ![P](http://i.imgur.com/5lkVAib.png)
 ![Pikachu](http://i.imgur.com/7dVt8FP.png) ![Squirtle](http://i.imgur.com/2ckEbfr.png)
 
 
-## Installation
+### Installation
 You'll need [Python 2.x](http://www.python.org/download/releases/2.7.5/), [requests](http://docs.python-requests.org/en/latest/) and [PIL](http://www.pythonware.com/products/pil/).
 Then simply download and use the script (mosaticon.py)
 
 
-## Usage
+### Usage
 `mosaticon.py <steamid> <imagefile> [<width> [<height>]]`
 
 where:
@@ -32,7 +35,7 @@ to gather a list of emoticons you own and can use. Do also note that because of 
 of the script will look better the more emoticons you own.
 
 
-## Output
+### Output
 The script will output the text you'll need to paste. It outputs to stdout by default though,
 so you'll it to redirect it to a file: `mosaticon.py bla bla bla > output.txt`
 
@@ -42,7 +45,7 @@ You'll need to paste each piece in succession. Also, since the Steam client has 
 There might be a way of uncapping the client through skin editing, but I couldn't get it working.
 
 
-## Extra information
+### Extra information
 When you are pasting multiple pieces, your name will push the first line of text a bit.
 To conpensate for this, I remove a few emoticons, and add a few dots.
 For example, [my name](http://i.imgur.com/H25Fn30.png) is roughly 3.4 emoticons wide, so I remove 4 emoticons and 2 dots (each dot is ~0.2 emote).
